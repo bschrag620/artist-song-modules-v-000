@@ -2,7 +2,8 @@ require 'pry'
 require_relative "concerns/memorable.rb"
 
 class Artist
-  extend Memorable
+  extend Memorable::ClassMethods
+  include Memorable::InstanceMethods
   extend Findable
   include Paramable
 
@@ -12,6 +13,7 @@ class Artist
   @@all = []
 
   def initialize
+    super
     @songs = []
   end
 
