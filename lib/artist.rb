@@ -3,7 +3,7 @@ require_relative "concerns/memorable.rb"
 
 class Artist
   extend Memorable
-  include Findable
+  extend Findable
 
   attr_accessor :name
   attr_reader :songs
